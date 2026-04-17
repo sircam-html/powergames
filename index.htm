@@ -44,19 +44,17 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-  <link rel="stylesheet" href="/.s/src/base.min.css" />
-  <link rel="stylesheet" href="/.s/src/layer7.min.css" />
-  <link rel="stylesheet" href="/.s/src/fancybox5/dist/css/fancybox5.min.css" />
-  <link rel="stylesheet" href="/.s/src/social.css" />
-  <link rel="stylesheet" href="/_st/shop.css?v=132026" />
+  <link rel="stylesheet" href=".s/src/base.min.css" />
+  <link rel="stylesheet" href=".s/src/layer7.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css" />
+  <link rel="stylesheet" href=".s/src/social.css" />
+  <link rel="stylesheet" href="_st/shop.css?v=132026" />
 
-  <script src="/.s/src/jquery-3.6.0.min.js"></script>
-  <script src="/.s/src/uwnd.min.js"></script>
-  <script async type="module" src="/.s/src/fancybox5/dist/js/chunks/uFancy-runtime.min.js"></script>
-  <script async type="module" src="/.s/src/fancybox5/dist/js/vendors/fancybox5.min.js"></script>
-  <script type="module" src="/.s/src/fancybox5/dist/js/uFancy.min.js"></script>
-  <script src="/.s/src/shop_utils.js"></script>
-  <script src="/.s/src/shop.js"></script>
+  <script src=".s/src/jquery-3.6.0.min.js"></script>
+  <script src=".s/src/uwnd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  <script src=".s/src/shop_utils.js"></script>
+  <script src=".s/src/shop.js"></script>
 
   <script>
     var _ucoz_uriId = 'shMain',
@@ -815,61 +813,131 @@
        FOOTER
     ============================================ */
     .site-footer {
-      background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
-      border-top: 2px solid rgba(255,255,255,0.06);
+      background: #080808 !important;
+      background-color: #080808 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
       margin-top: 64px;
-      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      color: rgba(255,255,255,0.5) !important;
+    }
+
+    .site-footer::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 280px;
+      background: radial-gradient(ellipse at center, rgba(232, 41, 11, 0.10) 0%, transparent 70%) !important;
+      pointer-events: none;
+    }
+
+    .footer-brand {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 52px 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: transparent !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.055) !important;
+    }
+
+    .footer-brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(232, 41, 11, 0.45));
+    }
+
+    .footer-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .footer-brand-name {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #fff !important;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-brand-tagline {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      color: rgba(255,255,255,0.38) !important;
+      letter-spacing: 0.04em;
     }
 
     .footer-top {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 56px 24px 48px;
-      display: grid;
+      padding: 44px 32px 48px;
+      display: grid !important;
       grid-template-columns: repeat(4, 1fr);
-      gap: 48px;
+      gap: 40px;
+      background: transparent !important;
+      background-color: transparent !important;
     }
 
     .footer-col {
       position: relative;
+      background: transparent !important;
+      background-color: transparent !important;
     }
 
     .footer-col h2 {
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--pg-orange);
-      margin-bottom: 20px;
+      font-size: 10.5px !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.16em !important;
+      color: rgba(255, 120, 0, 0.85) !important;
+      margin-bottom: 22px !important;
       position: relative;
-      padding-bottom: 12px;
+      padding-bottom: 14px !important;
+      background: transparent !important;
     }
 
     .footer-col h2::after {
-      content: '';
+      content: '' !important;
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 24px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--pg-orange) 0%, transparent 100%);
+      width: 28px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--pg-orange) 0%, transparent 100%) !important;
+      border-radius: 2px;
     }
 
     .footer-col p {
-      font-size: 14px;
-      color: #b8b8b8;
-      line-height: 1.72;
-      font-weight: 400;
-      letter-spacing: 0.3px;
+      font-size: 13.5px !important;
+      color: rgba(255, 255, 255, 0.42) !important;
+      line-height: 1.78 !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.02em;
     }
 
     .footer-col a {
-      color: #d0d0d0;
-      text-decoration: none;
-      transition: all var(--transition-fast);
+      color: rgba(255, 255, 255, 0.55) !important;
+      text-decoration: none !important;
+      transition: color 0.18s ease;
       position: relative;
       display: inline-block;
+      background: transparent !important;
     }
+
+    .footer-col p a {
+      color: rgba(255, 120, 0, 0.7) !important;
+    }
+
+    .footer-col p a:hover {
+      color: var(--pg-orange) !important;
+    }
+
+    .footer-col p a::after { display: none !important; }
 
     .footer-col a::after {
       content: '';
@@ -877,13 +945,13 @@
       bottom: -2px;
       left: 0;
       width: 0;
-      height: 1.5px;
-      background: var(--pg-orange);
-      transition: width var(--transition-fast);
+      height: 1px;
+      background: linear-gradient(90deg, var(--pg-orange), transparent);
+      transition: width 0.2s ease;
     }
 
     .footer-col a:hover {
-      color: var(--pg-white);
+      color: rgba(255, 255, 255, 0.9) !important;
     }
 
     .footer-col a:hover::after {
@@ -891,113 +959,123 @@
     }
 
     .footer-col ul {
-      list-style: none;
+      list-style: none !important;
     }
 
     .footer-col ul li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .footer-col ul li a {
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 13.5px !important;
+      font-weight: 500 !important;
+      display: flex !important;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 0;
+      color: rgba(255, 255, 255, 0.55) !important;
     }
+
+    .footer-col ul li a::before {
+      content: '›';
+      font-size: 15px;
+      color: rgba(255, 120, 0, 0.5) !important;
+      transition: transform 0.18s ease, color 0.18s ease;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .footer-col ul li a:hover::before {
+      transform: translateX(3px);
+      color: var(--pg-orange) !important;
+    }
+
+    .footer-col ul li a::after { display: none !important; }
 
     .social-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 18px;
     }
 
     .social-links a {
-      display: inline-flex;
+      display: inline-flex !important;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 120, 0, 0.08);
-      border: 1px solid rgba(255, 120, 0, 0.2);
-      border-radius: 8px;
-      transition: all var(--transition-med);
+      width: 42px !important;
+      height: 42px !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border: 1px solid rgba(255, 255, 255, 0.09) !important;
+      border-radius: 50% !important;
+      transition: all 0.22s ease;
+      backdrop-filter: blur(4px);
     }
 
+    .social-links a::after { display: none !important; }
+    .social-links a::before { display: none !important; }
+
     .social-links a:hover {
-      background: rgba(255, 120, 0, 0.15);
-      border-color: rgba(255, 120, 0, 0.4);
+      background: rgba(232, 41, 11, 0.12) !important;
+      border-color: rgba(232, 41, 11, 0.4) !important;
       transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(232, 41, 11, 0.2);
     }
 
     .social-links img {
-      width: 24px;
-      height: 24px;
+      width: 22px !important;
+      height: 22px !important;
+      filter: brightness(0.75) grayscale(0.3);
+      transition: filter 0.22s ease;
+    }
+
+    .social-links a:hover img {
+      filter: brightness(1) grayscale(0);
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.04);
-      padding: 24px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+      padding: 22px 32px;
       max-width: 1280px;
       margin: 0 auto;
-      display: flex;
+      display: flex !important;
       align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.4);
+      justify-content: space-between;
+      background: transparent !important;
+      background-color: transparent !important;
     }
 
     .footer-copy {
-      font-size: 13px;
-      color: var(--pg-orange);
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 12.5px !important;
+      color: rgba(255, 255, 255, 0.25) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-copy span {
+      color: rgba(232, 41, 11, 0.7) !important;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      font-size: 12px !important;
+      color: rgba(255,255,255,0.22) !important;
+      text-decoration: none !important;
+      letter-spacing: 0.04em;
+      transition: color 0.18s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: rgba(255,255,255,0.55) !important;
     }
 
     @media (prefers-color-scheme: light) {
       .site-footer {
-        background: linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%);
-        border-top: 2px solid rgba(232, 41, 11, 0.15);
-      }
-
-      .footer-col h2 {
-        color: var(--pg-red);
-      }
-
-      .footer-col h2::after {
-        background: linear-gradient(90deg, var(--pg-red) 0%, transparent 100%);
-      }
-
-      .footer-col p {
-        color: #2a2a2a;
-      }
-
-      .footer-col a {
-        color: #1a1a1a;
-      }
-
-      .footer-col a:hover {
-        color: var(--pg-red);
-      }
-
-      .footer-col a:hover::after {
-        background: var(--pg-red);
-      }
-
-      .social-links a {
-        background: rgba(232, 41, 11, 0.08);
-        border-color: rgba(232, 41, 11, 0.25);
-      }
-
-      .social-links a:hover {
-        background: rgba(232, 41, 11, 0.16);
-        border-color: rgba(232, 41, 11, 0.5);
-      }
-
-      .footer-bottom {
-        background: rgba(232, 41, 11, 0.04);
-        border-top: 1px solid rgba(232, 41, 11, 0.1);
-      }
-
-      .footer-copy {
-        color: var(--pg-red);
+        background: #080808 !important;
       }
     }
 
@@ -1007,6 +1085,15 @@
     @media (max-width: 1024px) {
       .footer-top {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-brand {
+        padding: 40px 24px 32px;
+      }
+      .footer-top {
+        padding: 36px 24px 40px;
+      }
+      .footer-bottom {
+        padding: 20px 24px;
       }
     }
 
@@ -1106,15 +1193,25 @@
         display: none;
       }
 
+      .footer-brand {
+        padding: 32px 16px 24px;
+      }
+
       .footer-top {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding: 28px 16px 36px;
       }
 
       .footer-bottom {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+        padding: 18px 16px;
+      }
+
+      .footer-bottom-links {
+        gap: 14px;
       }
 
       .page-content {
@@ -1631,7 +1728,14 @@
   <!-- ============================================
        FOOTER
   ============================================ -->
-  <footer class="site-footer">
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-brand">
+      <img class="footer-brand-logo" src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/brand/pg-logo.webp" alt="Power Games" />
+      <div class="footer-brand-text">
+        <span class="footer-brand-name">Power Games</span>
+        <span class="footer-brand-tagline">Videojuegos, Consolas &amp; Accesorios desde 1999</span>
+      </div>
+    </div>
     <div class="footer-top">
       <div class="footer-col">
         <h2>La empresa</h2>
@@ -1645,19 +1749,19 @@
         <h2>Redes sociales</h2>
         <p>Síguenos para estar al tanto de ofertas, descuentos y promociones.</p>
         <div class="social-links">
-          <a href="https://www.instagram.com/powergames_rd/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/powergames_rd/" target="_blank" rel="noopener noreferrer" title="Instagram">
             <img src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/store-front/dwn/instagram-logo-btn.webp" alt="Instagram" />
           </a>
-          <a href="https://www.facebook.com/PowerGamesEnLinea/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/PowerGamesEnLinea/" target="_blank" rel="noopener noreferrer" title="Facebook">
             <img src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/store-front/dwn/facebook-logo-btn.webp" alt="Facebook" />
           </a>
-          <a href="https://wa.me/18092550108" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/18092550108" target="_blank" rel="noopener noreferrer" title="WhatsApp">
             <img src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/store-front/dwn/whatsapp-logo-btn.webp" alt="WhatsApp" />
           </a>
-          <a href="https://x.com/powergamesrd" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/powergamesrd" target="_blank" rel="noopener noreferrer" title="X / Twitter">
             <img src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/store-front/dwn/x-twitter-logo-btn.webp" alt="X / Twitter" />
           </a>
-          <a href="https://maps.app.goo.gl/pYJVZvT5M3rKp7PE6" target="_blank" rel="noopener noreferrer">
+          <a href="https://maps.app.goo.gl/pYJVZvT5M3rKp7PE6" target="_blank" rel="noopener noreferrer" title="Google Business">
             <img src="//cdn.jsdelivr.net/gh/sircam-html/ipfs.pg@main/store-front/dwn/google-logo-btn.webp" alt="Google Business" />
           </a>
         </div>
@@ -1673,7 +1777,12 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">&copy; 1999-2026, Power Games</span>
+      <span class="footer-copy">&copy; 1999&ndash;2026 <span>Power Games</span>. Todos los derechos reservados.</span>
+      <div class="footer-bottom-links">
+        <a href="/index/0-2">Sobre nosotros</a>
+        <a href="/index/0-19">Sucursales</a>
+        <a href="https://wa.me/18092550108" target="_blank" rel="noopener noreferrer">Contacto</a>
+      </div>
     </div>
   </footer>
 
@@ -1838,6 +1947,6 @@
  </footer>
  </div>
 
-</body>
+<script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-repl-id="afbb24a7-4455-43a7-ab03-239152cd1951"></script></body>
 </html>
 
