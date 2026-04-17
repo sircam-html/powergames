@@ -188,15 +188,19 @@
       display: flex;
       align-items: center;
       background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,0.13);
+      border-radius: 10px;
       overflow: hidden;
-      transition: border-color var(--transition-fast), background var(--transition-fast);
+      transition: border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: 560px;
     }
 
     .search-form:focus-within {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.13);
       border-color: var(--pg-red);
+      box-shadow: 0 0 0 3px rgba(232,41,11,0.18);
     }
 
     .search-form input[type="text"] {
@@ -205,9 +209,11 @@
       outline: none;
       color: var(--pg-white);
       font-family: inherit;
-      font-size: 13px;
-      padding: 7px 12px;
-      width: 220px;
+      font-size: 15px;
+      padding: 11px 16px;
+      width: 100%;
+      min-width: 0;
+      flex: 1 1 0;
     }
 
     .search-form input[type="text"]::placeholder {
@@ -218,13 +224,14 @@
       background: var(--pg-red);
       border: none;
       color: var(--pg-white);
-      padding: 7px 13px;
+      padding: 11px 18px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 15px;
       transition: background var(--transition-fast);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     .search-form button:hover {
@@ -233,8 +240,8 @@
 
     /* Search icon SVG */
     .icon-search {
-      width: 14px;
-      height: 14px;
+      width: 17px;
+      height: 17px;
       fill: none;
       stroke: currentColor;
       stroke-width: 2;
@@ -1028,8 +1035,17 @@
         display: block;
       }
 
+      .search-form {
+        max-width: 100%;
+      }
+
       .search-form input[type="text"] {
-        width: 160px;
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+
+      .search-form button {
+        padding: 10px 14px;
       }
 
       .demo-hero {
@@ -1055,7 +1071,12 @@
       }
 
       .search-form input[type="text"] {
-        width: 120px;
+        font-size: 13px;
+        padding: 9px 10px;
+      }
+
+      .search-form button {
+        padding: 9px 12px;
       }
 
       .header-inner {
