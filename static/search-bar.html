@@ -1,0 +1,12 @@
+<!-- Search Bar HTML Element -->
+<!-- Place this inside a flex container (header with display: flex) -->
+
+<form class="search-form" onsubmit="this.sfSbm.disabled=true" method="post" action="/shop/search">
+  <input type="text" name="query" placeholder="Buscar productos..." autocomplete="off" />
+  <button type="submit" name="sfSbm" aria-label="Buscar">
+    <svg class="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"/>
+      <line x1="17" y1="17" x2="22" y2="22"/>
+    </svg>
+  </button>
+</form>
